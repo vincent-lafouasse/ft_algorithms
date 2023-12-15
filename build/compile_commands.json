@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/Users/poss/code/C/Algorithms/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -I/Users/poss/code/C/Algorithms/./include  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Wall -Wextra -Wpedantic -g3 -o CMakeFiles/algorithms.dir/src/sort.c.o -c /Users/poss/code/C/Algorithms/src/sort.c",
+  "file": "/Users/poss/code/C/Algorithms/src/sort.c",
+  "output": "CMakeFiles/algorithms.dir/src/sort.c.o"
+},
+{
+  "directory": "/Users/poss/code/C/Algorithms/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -I/Users/poss/code/C/Algorithms/test/test-framework  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Wall -Wextra -Wpedantic -g3 -DUNITY_SUPPORT_64 -DUNITY_OUTPUT_COLOR -o CMakeFiles/unity_test_runner.dir/test/test-framework/unity.c.o -c /Users/poss/code/C/Algorithms/test/test-framework/unity.c",
+  "file": "/Users/poss/code/C/Algorithms/test/test-framework/unity.c",
+  "output": "CMakeFiles/unity_test_runner.dir/test/test-framework/unity.c.o"
+},
+{
+  "directory": "/Users/poss/code/C/Algorithms/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -I/Users/poss/code/C/Algorithms/./include -I/Users/poss/code/C/Algorithms/test/test-framework  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -Wall -Wextra -Wpedantic -g3 -o CMakeFiles/test.dir/test/src/main.c.o -c /Users/poss/code/C/Algorithms/test/src/main.c",
+  "file": "/Users/poss/code/C/Algorithms/test/src/main.c",
+  "output": "CMakeFiles/test.dir/test/src/main.c.o"
+}
+]
