@@ -1,6 +1,0 @@
-/Users/poss/code/C/Algorithms/build/CMakeFiles/algorithms.dir
-/Users/poss/code/C/Algorithms/build/CMakeFiles/unity_test_runner.dir
-/Users/poss/code/C/Algorithms/build/CMakeFiles/test.dir
-/Users/poss/code/C/Algorithms/build/CMakeFiles/run_tests.dir
-/Users/poss/code/C/Algorithms/build/CMakeFiles/edit_cache.dir
-/Users/poss/code/C/Algorithms/build/CMakeFiles/rebuild_cache.dir
