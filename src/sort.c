@@ -6,13 +6,13 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 22:44:42 by poss              #+#    #+#             */
-/*   Updated: 2023/12/15 22:45:03 by poss             ###   ########.fr       */
+/*   Updated: 2023/12/17 13:49:57 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_algorithms.h"
 
-bool is_sorted(void* array, size_t size, size_t element_size, bool (*less)(void*, void*))
+bool is_sorted(void* array, size_t size, size_t element_size, int (*compare)(void*, void*))
 {
 	return false;
 }
