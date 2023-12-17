@@ -12,7 +12,8 @@
 
 #include "ft_algorithms.h"
 
-bool is_sorted(void* array, size_t size, size_t element_size, int (*compare)(void*, void*))
+bool	is_sorted(void *array, size_t size, size_t element_size,
+		int (*compare)(void *, void *))
 {
-	return false;
+	return (false);
 }

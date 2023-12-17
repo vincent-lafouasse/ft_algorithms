@@ -12,11 +12,12 @@
 /* ************************************************************************** */
 
 #ifndef FT_ALGORITHMS_H
-#define FT_ALGORITHMS_H
+# define FT_ALGORITHMS_H
 
 # include <stdbool.h>
 # include <stddef.h>
 
-bool is_sorted(void* array, size_t size, size_t element_size, int (*compare)(void*, void*));
+bool	is_sorted(void *array, size_t size, size_t element_size,
+			int (*compare)(void *, void *));
 
 #endif
