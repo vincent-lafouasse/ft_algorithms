@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 18:31:09 by poss              #+#    #+#             */
-/*   Updated: 2023/12/15 22:50:13 by poss             ###   ########.fr       */
+/*   Updated: 2023/12/17 13:58:22 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ void setUp(void) {}
 
 void tearDown(void) {}
 
-void run_test_sort(void);
+void run_test_is_sorted(void);
 
 int main(void)
 {
     UnityBegin("Vector");
-    run_test_sort();
+    run_test_is_sorted();
     return (UnityEnd());
 }
