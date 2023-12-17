@@ -17,7 +17,7 @@ target_include_directories(unity_test_runner PUBLIC test/test-framework)
 
 add_executable(test 
 	test/src/main.c
-	test/src/sort.c
+	test/src/is_sorted.c
 )
 target_include_directories(test PUBLIC ./include)
 target_include_directories(test PUBLIC test/test-framework)
