@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_algorithms.h                                    :+:      :+:    :+:   */
+/*   int1.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/15 18:31:31 by poss              #+#    #+#             */
-/*   Updated: 2023/12/19 20:10:24 by poss             ###   ########.fr       */
-/*   Updated: 2023/12/15 20:48:19 by poss             ###   ########.fr       */
+/*   Created: 2023/12/19 20:07:09 by poss              #+#    #+#             */
+/*   Updated: 2023/12/19 20:09:18 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ALGORITHMS_H
-# define FT_ALGORITHMS_H
+#include "ft_predicates.h"
 
-# include "ft_predicates.h"
-# include <stddef.h>
-
-bool	is_sorted(const void *array, size_t size, t_binary_predicate less_equal,
-			size_t element_size);
-
-#endif
+bool	less_equal_int(const void *int1, const void *int2)
+{
+	return (*(int *)int1 <= *(int *)int2);
+}

@@ -5,19 +5,8 @@
 extern "C"
 {
 #include "ft_algorithms.h"
+#include "ft_predicates.h"
 };
-
-int int_compare_C_style(const void* int1, const void* int2)
-{
-    int __int1 = *(int*)int1;
-    int __int2 = *(int*)int2;
-
-    if (__int1 < __int2)
-        return -1;
-    if (__int1 > __int2)
-        return 1;
-    return 0;
-}
 
 TEST(Sorts, IsSorted)
 {
@@ -26,8 +15,7 @@ TEST(Sorts, IsSorted)
     std::vector<int> array__{array, array + array_size};
 
     bool expected = std::is_sorted(array__.cbegin(), array__.cend());
-    bool actual =
-        is_sorted(array, array_size, &int_compare_C_style, sizeof(*array));
+    bool actual = is_sorted(array, array_size, &less_equal_int, sizeof(*array));
 
     ASSERT_EQ(expected, actual)
         << "Error, expected " << expected << " was " << actual << '\n';
