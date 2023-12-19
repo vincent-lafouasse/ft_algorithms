@@ -7,14 +7,22 @@ a collection of useful algorithms
 ## Todo
 
 ```c
-typedef int (*t_unary_predicate)(void*);
-typedef int (*t_binary_predicate)(void*, void*);
+typedef bool (*t_unary_predicate)(void*);
+typedef bool (*t_binary_predicate)(void*, void*);
+typedef int  (*t_comparison)(void*, void*);
 ```
 
 - `rotate(void* start, void* end, void* new_start, size_t element_size)`
+- `sort(void* start, void* end, t_comparison, size_t element_size)` + stable version
+- `partition(void* start, void* end, t_unary_predicate, size_t element_size)` + stable version
+
+- `binary_search(void* start, void* end, t_comparison, size_t element_size)`
+- `lower_bound(void* start, void* end, t_comparison, size_t element_size)` + `upper_bound`
+
 - `all`, `any`, `none`: `all(void* start, void* end, int (*predicate)(void*), size_t element_size)`
 - `find(void* start, void* end, void* target, size_t element_size)` and `find_if` with argument `t_unary_predicate` instead of value
 - `count(void* start, void* end, void* target, size_t element_size)` and `count_if` with argument `t_unary_predicate` instead of value
+- `swap(void*, void*, size_t element_size)`
 
 ### LICENSE
 
