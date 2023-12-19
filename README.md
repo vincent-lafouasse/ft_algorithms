@@ -4,6 +4,18 @@
 
 a collection of useful algorithms
 
+## Todo
+
+```c
+typedef int (*t_unary_predicate)(void*);
+typedef int (*t_binary_predicate)(void*, void*);
+```
+
+- `rotate(void* start, void* end, void* new_start, size_t element_size)`
+- `all`, `any`, `none`: `all(void* start, void* end, int (*predicate)(void*), size_t element_size)`
+- `find(void* start, void* end, void* target, size_t element_size)` and `find_if` with argument `t_unary_predicate` instead of value
+- `count(void* start, void* end, void* target, size_t element_size)` and `count_if` with argument `t_unary_predicate` instead of value
+
 ### LICENSE
 
 ```
