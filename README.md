@@ -30,8 +30,6 @@ typedef int  (*t_comparison)(void*, void*);
 
 - useful predicates like `int_compare`, `float_is_positive`, `compare_double` etc
 
-- maybe change semantics for `t_comparison` to be more like `std::less_than`
-
 ### LICENSE
 
 ```
