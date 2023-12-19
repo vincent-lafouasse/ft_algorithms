@@ -1,5 +1,7 @@
 # ft_algorithms
 
+[![run tests](https://github.com/vincent-lafouasse/ft_algorithms/actions/workflows/run_tests.yml/badge.svg)](https://github.com/vincent-lafouasse/ft_algorithms/actions/workflows/run_tests.yml)
+
 a collection of useful algorithms
 
 ### LICENSE
