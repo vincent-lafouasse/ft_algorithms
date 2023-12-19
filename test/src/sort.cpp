@@ -7,7 +7,7 @@ extern "C"
 #include "ft_algorithms.h"
 };
 
-int int_compare_C_style(void* int1, void* int2)
+int int_compare_C_style(const void* int1, const void* int2)
 {
     int __int1 = *(int*)int1;
     int __int2 = *(int*)int2;
