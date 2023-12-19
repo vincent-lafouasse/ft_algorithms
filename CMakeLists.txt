@@ -9,6 +9,7 @@ add_compile_options(-g3)
 add_library(algorithms
 	src/sort.c
 	src/predicates/int1.c
+	src/predicates/int2.c
 )
 target_include_directories(algorithms PUBLIC ./include)
 
