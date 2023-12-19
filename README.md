@@ -22,7 +22,15 @@ typedef int  (*t_comparison)(void*, void*);
 - `all`, `any`, `none`: `all(void* start, void* end, int (*predicate)(void*), size_t element_size)`
 - `find(void* start, void* end, void* target, size_t element_size)` and `find_if` with argument `t_unary_predicate` instead of value
 - `count(void* start, void* end, void* target, size_t element_size)` and `count_if` with argument `t_unary_predicate` instead of value
+
+- `map(void* start, void* end, void (*f)(void*))`
+
+- `max(void* start, void* end, t_comparison)` + `min`
 - `swap(void*, void*, size_t element_size)`
+
+- useful predicates like `int_compare`, `float_is_positive`, `compare_double` etc
+
+- maybe change semantics for `t_comparison` to be more like `std::less_than`
 
 ### LICENSE
 
