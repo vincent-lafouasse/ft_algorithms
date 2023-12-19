@@ -8,6 +8,7 @@ include_directories(.)
 
 add_executable(test_runner
 	${PROJECT_SOURCE_DIR}/test/src/sort.cpp
+	${PROJECT_SOURCE_DIR}/test/src/all_any_none.cpp
 	${PROJECT_SOURCE_DIR}/test/src/main.cpp
 )
 set_target_properties(test_runner PROPERTIES LINKER_LANGUAGE CXX)
