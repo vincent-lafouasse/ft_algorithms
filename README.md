@@ -19,7 +19,6 @@ typedef int  (*t_comparison)(void*, void*);
 - `binary_search(void* start, void* end, t_comparison, size_t element_size)`
 - `lower_bound(void* start, void* end, t_comparison, size_t element_size)` + `upper_bound`
 
-- `all`, `any`, `none`: `all(void* start, void* end, int (*predicate)(void*), size_t element_size)`
 - `find(void* start, void* end, void* target, size_t element_size)` and `find_if` with argument `t_unary_predicate` instead of value
 - `count(void* start, void* end, void* target, size_t element_size)` and `count_if` with argument `t_unary_predicate` instead of value
 
