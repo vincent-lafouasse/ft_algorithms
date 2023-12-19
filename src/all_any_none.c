@@ -6,19 +6,21 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 21:04:50 by poss              #+#    #+#             */
-/*   Updated: 2023/12/19 21:18:36 by poss             ###   ########.fr       */
+/*   Updated: 2023/12/20 00:57:21 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_algorithms.h"
 
+typedef unsigned char	t_byte;
+
 bool	all(const void *start, const void *end,
 		bool (*pred)(const void *element), size_t element_size)
 {
-	unsigned char	*current;
+	t_byte	*current;
 
-	current = (unsigned char *)start;
-	while (current < (const unsigned char *)end)
+	current = (t_byte *)start;
+	while (current < (const t_byte *)end)
 	{
 		if (!(*pred)(current))
 			return (false);
@@ -30,10 +32,10 @@ bool	all(const void *start, const void *end,
 bool	any(const void *start, const void *end,
 		bool (*pred)(const void *element), size_t element_size)
 {
-	unsigned char	*current;
+	t_byte	*current;
 
-	current = (unsigned char *)start;
-	while (current < (const unsigned char *)end)
+	current = (t_byte *)start;
+	while (current < (const t_byte *)end)
 	{
 		if ((*pred)(current))
 			return (true);
