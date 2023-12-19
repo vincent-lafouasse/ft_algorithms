@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_algorithms.h                                    :+:      :+:    :+:   */
+/*   ft_predicates.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/15 18:31:31 by poss              #+#    #+#             */
-/*   Updated: 2023/12/19 20:05:18 by poss             ###   ########.fr       */
-/*   Updated: 2023/12/15 20:48:19 by poss             ###   ########.fr       */
+/*   Created: 2023/12/19 20:01:37 by poss              #+#    #+#             */
+/*   Updated: 2023/12/19 20:05:10 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ALGORITHMS_H
-# define FT_ALGORITHMS_H
+#ifndef FT_PREDICATES_H
+#define FT_PREDICATES_H
 
-# include <stddef.h>
+# include <stdbool.h>
 
-#include "ft_predicates.h"
+typedef bool	(*t_unary_predicate)(const void *);
+typedef bool	(*t_binary_predicate)(const void *, const void *);
+typedef int		(*t_comparison)(const void *, const void *);
 
-bool is_sorted(const void *array, size_t size, t_comparison compare,
-               size_t element_size);
+bool (*less_equal_int)(const void*, const void*);
+bool (*less_equal_float)(const void*, const void*);
 
 #endif
