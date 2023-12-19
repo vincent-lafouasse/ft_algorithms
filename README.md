@@ -1,10 +1,6 @@
-# t_vector
+# ft_algorithms
 
-![test status](https://github.com/vincent-lafouasse/t_vector/actions/workflows/run_tests.yml/badge.svg)
-![static analysis status](https://github.com/vincent-lafouasse/t_vector/actions/workflows/check.yml/badge.svg)
-
-
-A dynamic array in C
+a collection of useful algorithms
 
 ### LICENSE
 
