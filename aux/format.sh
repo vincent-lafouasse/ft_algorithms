@@ -23,4 +23,4 @@ for file in $TO_NORM; do
 	norm "$file"
 done
 
-clang-format -i test/src/*.c
+clang-format -i test/src/*.cpp
