@@ -27,7 +27,7 @@ TEST(Sorts, IsSorted)
 
     bool expected = std::is_sorted(array__.cbegin(), array__.cend());
     bool actual =
-        is_sorted(array, array_size, sizeof(*array), &int_compare_C_style);
+        is_sorted(array, array_size, &int_compare_C_style, sizeof(*array));
 
     ASSERT_EQ(expected, actual)
         << "Error, expected " << expected << " was " << actual << '\n';
