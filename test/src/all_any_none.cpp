@@ -23,36 +23,33 @@ static bool is_even(const void* p_int)
 
 TEST(AllAnyNone, All)
 {
-    int array[] = {1, 4, 5, 7, 23, 0, 6, 3, 4, 6, 3};
-    int array_size = sizeof(array) / sizeof(int);
+    int data[] = {1, 4, 5, 7, 23, 0, 6, 3, 4, 6, 3};
+    size_t data_size = sizeof(data) / sizeof(*data);
+    t_array array = {data, data_size, sizeof(*data)};
 
-    ASSERT_EQ(true,
-              all(array, array + array_size, &is_positive, sizeof(*array)));
-    ASSERT_EQ(false, all(array, array + array_size, &is_strictly_positive,
-                         sizeof(*array)));
-    ASSERT_EQ(false, all(array, array + array_size, &is_even, sizeof(*array)));
+    ASSERT_TRUE(all(array, &is_positive));
+    ASSERT_FALSE(all(array, &is_strictly_positive));
+    ASSERT_FALSE(all(array, &is_even));
 }
 
 TEST(AllAnyNone, Any)
 {
-    int array[] = {-3, -7, 5, 45};
-    int array_size = sizeof(array) / sizeof(int);
+    int data[] = {-3, -7, 5, 45};
+    size_t data_size = sizeof(data) / sizeof(*data);
+    t_array array = {data, data_size, sizeof(*data)};
 
-    ASSERT_EQ(true,
-              any(array, array + array_size, &is_positive, sizeof(*array)));
-    ASSERT_EQ(true, any(array, array + array_size, &is_strictly_positive,
-                        sizeof(*array)));
-    ASSERT_EQ(false, any(array, array + array_size, &is_even, sizeof(*array)));
+    ASSERT_TRUE(any(array, &is_positive));
+    ASSERT_TRUE(any(array, &is_strictly_positive));
+    ASSERT_FALSE(any(array, &is_even));
 }
 
 TEST(AllAnyNone, None)
 {
-    int array[] = {-3, -7, 5, 45};
-    int array_size = sizeof(array) / sizeof(int);
+    int data[] = {-3, -7, 0};
+    size_t data_size = sizeof(data) / sizeof(*data);
+    t_array array = {data, data_size, sizeof(*data)};
 
-    ASSERT_EQ(false,
-              none(array, array + array_size, &is_positive, sizeof(*array)));
-    ASSERT_EQ(false, none(array, array + array_size, &is_strictly_positive,
-                          sizeof(*array)));
-    ASSERT_EQ(true, none(array, array + array_size, &is_even, sizeof(*array)));
+    ASSERT_FALSE(none(array, &is_positive));
+    ASSERT_TRUE(none(array, &is_strictly_positive));
+    ASSERT_FALSE(none(array, &is_even));
 }

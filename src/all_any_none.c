@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 21:04:50 by poss              #+#    #+#             */
-/*   Updated: 2023/12/20 17:08:43 by poss             ###   ########.fr       */
+/*   Updated: 2023/12/20 17:46:25 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,38 +14,35 @@
 
 typedef unsigned char	t_byte;
 
-bool	all(const void *start, const void *end,
-		bool (*pred)(const void *element), size_t element_size)
+bool	all(const t_array array, t_unary_predicate pred)
 {
-	const t_byte	*current;
+	size_t	i;
 
-	current = (const t_byte *)start;
-	while (current < (const t_byte *)end)
+	i = 0;
+	while (i < array.size * array.element_size)
 	{
-		if (!(*pred)(current))
+		if (!(*pred)((const t_byte *)array.data + i))
 			return (false);
-		current += element_size;
+		i += array.element_size;
 	}
 	return (true);
 }
 
-bool	any(const void *start, const void *end,
-		bool (*pred)(const void *element), size_t element_size)
+bool	any(const t_array array, t_unary_predicate pred)
 {
-	const t_byte	*current;
+	size_t	i;
 
-	current = (const t_byte *)start;
-	while (current < (const t_byte *)end)
+	i = 0;
+	while (i < array.size * array.element_size)
 	{
-		if ((*pred)(current))
+		if ((*pred)((const t_byte *)array.data + i))
 			return (true);
-		current += element_size;
+		i += array.element_size;
 	}
 	return (false);
 }
 
-bool	none(const void *start, const void *end,
-		bool (*pred)(const void *element), size_t element_size)
+bool	none(const t_array array, t_unary_predicate pred)
 {
-	return (!any(start, end, pred, element_size));
+	return (!any(array, pred));
 }
