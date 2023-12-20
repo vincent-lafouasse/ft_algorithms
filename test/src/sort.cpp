@@ -6,35 +6,29 @@ extern "C"
 #include "ft_predicates.h"
 };
 
-TEST(Sorts, IsSorted_NotSorted)
+TEST(IsSorted, NotSorted)
 {
     int array[] = {1, 4, 5, 7, 23, 4, 6, 3, 4, 6, 3};
-    int array_size = sizeof(array) / sizeof(int);
+    size_t array_size = sizeof(array) / sizeof(int);
 
-    ASSERT_EQ(false, is_sorted(array, array + array_size, &less_equal_int,
-                               sizeof(*array)));
-    ASSERT_EQ(false, is_sorted(array, array + array_size, &greater_equal_int,
-                               sizeof(*array)));
+    ASSERT_EQ(false, is_sorted({array, array_size, sizeof(int)}, &less_equal_int));
+    ASSERT_EQ(false, is_sorted({array, array_size, sizeof(int)}, &greater_equal_int));
 }
 
-TEST(Sorts, IsSorted_Sorted)
+TEST(IsSorted, Sorted)
 {
     int array[] = {1, 2, 3, 4, 5};
-    int array_size = sizeof(array) / sizeof(int);
+    size_t array_size = sizeof(array) / sizeof(int);
 
-    ASSERT_EQ(true, is_sorted(array, array + array_size, &less_equal_int,
-                              sizeof(*array)));
-    ASSERT_EQ(false, is_sorted(array, array + array_size, &greater_equal_int,
-                               sizeof(*array)));
+    ASSERT_EQ(true, is_sorted({array, array_size, sizeof(int)}, &less_equal_int));
+    ASSERT_EQ(false, is_sorted({array, array_size, sizeof(int)}, &greater_equal_int));
 }
 
-TEST(Sorts, IsSorted_SortedBackward)
+TEST(IsSorted, SortedBackward)
 {
     int array[] = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
-    int array_size = sizeof(array) / sizeof(int);
+    size_t array_size = sizeof(array) / sizeof(int);
 
-    ASSERT_EQ(false, is_sorted(array, array + array_size, &less_equal_int,
-                               sizeof(*array)));
-    ASSERT_EQ(true, is_sorted(array, array + array_size, &greater_equal_int,
-                              sizeof(*array)));
+    ASSERT_EQ(false, is_sorted({array, array_size, sizeof(int)}, &less_equal_int));
+    ASSERT_EQ(true, is_sorted({array, array_size, sizeof(int)}, &greater_equal_int));
 }
