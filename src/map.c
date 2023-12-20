@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 15:43:38 by poss              #+#    #+#             */
-/*   Updated: 2023/12/20 17:06:47 by poss             ###   ########.fr       */
+/*   Updated: 2023/12/20 17:53:57 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,32 +15,32 @@
 
 typedef unsigned char	t_byte;
 
-void	map(void *start, void *end, void (*transform)(void *element),
-		size_t element_size)
+static void	*offset(void *p, size_t sz)
 {
-	t_byte	*current;
+	return ((t_byte *)p + sz);
+}
 
-	current = start;
-	while (current < (t_byte *)end)
+void	map(t_array array, void (*transform)(void *))
+{
+	size_t	i;
+
+	i = 0;
+	while (i < array.size * array.element_size)
 	{
-		(*transform)(current);
-		current += element_size;
+		(*transform)(offset(array.data, i));
+		i += array.element_size;
 	}
 }
 
-void	map_copy(const void *start, const void *end, void *dest,
-		void (*transform)(void *), size_t element_size)
+void	map_copy(t_array src, void *dest, void (*transform)(void *))
 {
-	const t_byte	*p_read;
-	t_byte			*p_write;
+	size_t	i;
 
-	p_read = start;
-	p_write = dest;
-	while (p_read < (const t_byte *)end)
+	i = 0;
+	while (i < src.size * src.element_size)
 	{
-		memcpy(p_write, p_read, element_size);
-		(*transform)(p_write);
-		p_write += element_size;
-		p_read += element_size;
+		memcpy(offset(dest, i), offset(src.data, i), src.element_size);
+		(*transform)(offset(dest, i));
+		i += src.element_size;
 	}
 }
