@@ -13,6 +13,7 @@ typedef int  (*t_comparison)(void*, void*);
 ```
 
 - `rotate(void* start, void* end, void* new_start, size_t element_size)`
+- `reduce(void* start, void* end, void* accumulator, void (*accumulate)(void* accumulator, void* element), size_t element_size)`
 - `sort(void* start, void* end, t_comparison, size_t element_size)` + stable version
 - `partition(void* start, void* end, t_unary_predicate, size_t element_size)` + stable version
 
