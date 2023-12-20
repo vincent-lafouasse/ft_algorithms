@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 15:43:38 by poss              #+#    #+#             */
-/*   Updated: 2023/12/20 16:33:24 by poss             ###   ########.fr       */
+/*   Updated: 2023/12/20 16:35:24 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	map(void *start, void *end, void (*transform)(void *element),
 	current = start;
 	while (current < (t_byte *)end)
 	{
+		(*transform)(current);
 		current += element_size;
 	}
 }
