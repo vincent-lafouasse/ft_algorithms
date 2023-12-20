@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 21:04:50 by poss              #+#    #+#             */
-/*   Updated: 2023/12/20 00:57:21 by poss             ###   ########.fr       */
+/*   Updated: 2023/12/20 02:30:14 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ typedef unsigned char	t_byte;
 bool	all(const void *start, const void *end,
 		bool (*pred)(const void *element), size_t element_size)
 {
-	t_byte	*current;
+	const t_byte	*current;
 
-	current = (t_byte *)start;
+	current = (const t_byte *)start;
 	while (current < (const t_byte *)end)
 	{
 		if (!(*pred)(current))
@@ -32,9 +32,9 @@ bool	all(const void *start, const void *end,
 bool	any(const void *start, const void *end,
 		bool (*pred)(const void *element), size_t element_size)
 {
-	t_byte	*current;
+	const t_byte	*current;
 
-	current = (t_byte *)start;
+	current = (const t_byte *)start;
 	while (current < (const t_byte *)end)
 	{
 		if ((*pred)(current))
