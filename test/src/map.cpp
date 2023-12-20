@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 16:00:37 by poss              #+#    #+#             */
-/*   Updated: 2023/12/20 16:32:26 by poss             ###   ########.fr       */
+/*   Updated: 2023/12/20 17:02:57 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,20 @@ TEST(Map, SquareIntArray)
     map(array, array + array_size, &square_int, sizeof(*array));
     int expected2[] = {1, 4, 9, 16};
     assert_int_array_equality(array, expected2, array_size);
+}
+
+TEST(MapCopy, SquareIntArray)
+{
+    const int src[] = {-1, 2, -3, 4};
+    const int array_size = sizeof(src) / sizeof(int);
+
+    int* dest1 = static_cast<int*>(malloc(sizeof(int) * array_size));
+    map_copy(src, src + array_size, dest1, &abs_int, sizeof(*src));
+    int expected1[] = {1, 2, 3, 4};
+    assert_int_array_equality(dest1, expected1, array_size);
+
+    int* dest2 = static_cast<int*>(malloc(sizeof(int) * array_size));
+    map_copy(dest1, dest1 + array_size, dest2, &square_int, sizeof(*src));
+    int expected2[] = {1, 4, 9, 16};
+    assert_int_array_equality(dest2, expected2, array_size);
 }
